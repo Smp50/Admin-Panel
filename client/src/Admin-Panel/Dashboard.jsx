@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Link, Outlet } from 'react-router-dom';
 
 function AdminDashboard() {
@@ -30,11 +32,28 @@ function AdminDashboard() {
   return (
     <div className='page-wrapper'>
       <div className="content-wrapper">
-        <h2>Admin Panel</h2>
-        <input placeholder="Title" value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} />
-        <input placeholder="Slug" value={form.slug} onChange={e => setForm({ ...form, slug: e.target.value })} />
-        <textarea placeholder="Content" value={form.content} onChange={e => setForm({ ...form, content: e.target.value })} />
-        <button onClick={handleSubmit}>{form.id ? 'Update' : 'Create'}</button>
+        <div className="row gy-4">
+            <div className="col-12">
+                <h2>Admin Panel</h2>
+            </div>
+            <div className="col-12">
+                <input className='form-control' placeholder="Title" value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} />
+            </div>
+            <div className="col-12">
+                <input className='form-control' placeholder="Slug" value={form.slug} onChange={e => setForm({ ...form, slug: e.target.value })} />
+            </div>
+            <div className="col-12">
+                <CKEditor
+                    editor={ClassicEditor}
+                    data={form.editorData}
+                    onChange={(event, editor) => {
+                        const data = editor.getData();
+                        setForm({ ...form, editorData: data });
+                    }}
+                />
+            </div>
+        </div>
+        <button className='btn btn-primary mt-4' onClick={handleSubmit}>{form.id ? 'Update' : 'Create'}</button>
         <Outlet />
       </div>
     </div>

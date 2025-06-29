@@ -15,7 +15,7 @@ function Page() {
   return page ? (
     <div>
       <h1>{page.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: page.content }} />
+      <div dangerouslySetInnerHTML={{ __html: page.editorData }} />
     </div>
   ) : <p>Page not found</p>;
 }

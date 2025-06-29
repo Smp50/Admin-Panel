@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './assets/main.scss';
-// import Header from './componets/Header';
-// import Footer from './componets/Footer';
+import Header from './componets/header';
+import Footer from './componets/footer';
 import AdminDashboard from './Admin-Panel/Dashboard';
 import Page from './pages/page';
 import SideMenu from './Admin-Panel/sidebar';
@@ -18,7 +18,7 @@ const PageManage = () =>{
   const NotAdmin = Location.pathname.startsWith('/admin-panel');
   return(
     <>
-        {/* {!AdminRoute && <Header />} */}
+        {!AdminRoute && <Header />}
         {NotAdmin && <SideMenu />}
         <Routes>
           {/* Admin Path */}
@@ -33,7 +33,7 @@ const PageManage = () =>{
           <Route path='/product-detail/:title' element={<ProductDetail />} />
           <Route path='/cart-page' element={<Cart />} /> */}
         </Routes>
-        {/* {!AdminRoute && <Footer />} */}
+        {!AdminRoute && <Footer />}
     </>
   )
 }

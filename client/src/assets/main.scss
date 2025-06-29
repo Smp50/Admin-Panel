@@ -1,0 +1,28 @@
+// @import 'sass/reset';
+// @import 'sass/thumbnail';
+// @import 'sass/product';
+// @import 'sass/product-details';
+// @import 'sass/cart';
+
+.side-menu{
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    background-color: antiquewhite;
+}
+
+.page-wrapper{
+    margin-left: 250px;
+    background: #d8d8d8;
+    padding: 20px;
+}
+
+.content-wrapper{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group{
+    margin-bottom: 30px;
+}

@@ -17,6 +17,6 @@ function Page() {
       <h1>{page.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: page.editorData }} />
     </div>
-  ) : <p>Page not found</p>;
+  ) : ( <h3>Page not found</h3> )
 }
 export default Page;

@@ -12,7 +12,7 @@ function SideMenu() {
             <ul>
                 <li><Link to='/admin-panel'>Dashboard</Link></li>
                 <li><Link to='/admin-panel/menus'>Menus</Link></li>
-                <li><Link to='/admin-panel/pages'>Pages</Link></li>
+                <li><Link to='/admin-panel/cms-page'>Pages</Link></li>
                 <li><Link to='/admin-panel/modules'>Modules</Link></li>
             </ul>
         </div>

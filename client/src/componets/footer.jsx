@@ -6,7 +6,7 @@ function Footer() {
   const [menus, setMenus] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/menus/footer')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/menus/footer`)
       .then(res => setMenus(res.data));
   }, []);
 

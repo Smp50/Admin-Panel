@@ -6,7 +6,7 @@ function Header() {
   const [menus, setMenus] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/menus/header')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/menus/header`)
       .then(res => setMenus(res.data));
   }, []);
 
@@ -17,9 +17,9 @@ function Header() {
           <div className="col-12 d-flex align-items-center">
             <nav>
               <ul className='d-flex align-items-center gap-3 list-unstyled mb-0'>
-                <li><Link to='/'>Home</Link></li>
-              {menus.map(menu => (
-                <li><Link key={menu.id} to={`/${menu.slug}`}>{menu.label}</Link></li>
+                <li><Link to=''>Home</Link></li>
+              {menus.map((menu, index) => (
+                <li><Link key={index} to={`/${menu.slug}`}>{menu.label}</Link></li>
               ))}
               </ul>
             </nav>
